@@ -1,0 +1,74 @@
+/* Un solo color (--candy) define todo el botón: el degradado, el borde 3D
+   y la sombra salen de ese color, así la sombra siempre combina.
+   Para cambiar el color de un botón basta con cambiar --candy. */
+.btn-candy {
+  --candy: #ff3d7f;       /* Sabor por defecto: fresa (rosa) */
+  --candy-text: #ffffff;
+
+  --candy-top: color-mix(in srgb, var(--candy), white 35%);
+  --candy-edge: color-mix(in srgb, var(--candy), black 25%);
+  --candy-glow: color-mix(in srgb, var(--candy) 40%, transparent);
+
+  font-family: 'Fredoka', sans-serif;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--candy-text);
+  padding: 9px 22px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--candy-top) 0%, var(--candy) 100%);
+  box-shadow: 0 4px 0 var(--candy-edge), 0 7px 12px var(--candy-glow);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+/* Brillo de caramelo */
+.btn-candy::before {
+  content: "";
+  position: absolute;
+  top: 8%;
+  left: 8%;
+  width: 84%;
+  height: 38%;
+  background: rgba(255, 255, 255, 0.35);
+  border-radius: 50px 50px 60% 60% / 100% 100% 30% 30%;
+  pointer-events: none;
+}
+
+.btn-candy:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 var(--candy-edge), 0 10px 16px var(--candy-glow);
+}
+
+.btn-candy:active,
+.btn-candy[aria-pressed="true"] {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 var(--candy-edge), 0 3px 6px var(--candy-glow);
+}
+
+/* ---------- SABORES (colores) ---------- */
+.btn-candy--limon { --candy: #f5b700; --candy-text: #4a3500; }
+.btn-candy--menta { --candy: #10b981; }
+.btn-candy--cielo { --candy: #0ea5e9; }
+.btn-candy--uva   { --candy: #8b5cf6; }
+.btn-candy--wa    { --candy: #25D366; --candy-text: #1F1A2E; }
+.btn-candy--suave { --candy: #FFE5EF; --candy-text: #1F1A2E; }
+
+/* ---------- TAMAÑOS (opcionales) ---------- */
+.btn-candy--sm {
+  font-size: 0.8rem;
+  padding: 6px 16px;
+}
+
+.btn-candy--lg {
+  font-size: 1.05rem;
+  padding: 12px 30px;
+}
+
+/* Botones redondos de solo icono */
+.btn-candy--round {
+  padding: 0;
+  border-radius: 50%;
+}

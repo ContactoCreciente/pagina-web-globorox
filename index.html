@@ -1,0 +1,304 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Globorox</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="css/botones-candy.css">
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;800&family=Caveat:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+<div class="announce">🎉 Arma tu pedido y envíanoslo por WhatsApp · Envío gratis desde <b>&nbsp;50 soles</b></div>
+
+<header class="header" id="header">
+  <div class="wrap">
+    <a class="logo" href="#inicio" aria-label="Globorox, inicio">
+      <img src="img/logo/logo-globorox-marca.png" alt="Globorox" width="552" height="143">
+    </a>
+    <nav class="nav" aria-label="Principal">
+      <a href="#catalogo">Catálogo</a>
+      <a href="#arreglo">Arma tu arreglo</a>
+      <a href="#premium">pack premiun</a>
+      <a href="#quienes-somos">Quiénes somos</a>
+    </nav>
+    <div class="header-tools">
+      <label class="search" for="q">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#1F1A2E" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <input id="q" type="search" placeholder="Busca tu globo" autocomplete="off" aria-label="Buscar globos">
+      </label>
+      <button class="btn-candy btn-candy--sm" id="orderBtn" type="button" aria-expanded="false" aria-controls="drawer">
+  pedidos 🎈 <span id="cartCount">0</span>
+</button>
+    </div>
+  </div>
+</header>
+
+<main id="inicio">
+  <!-- HERO -->
+  <section class="hero">
+    <div class="confetti" id="confetti" aria-hidden="true"></div>
+    <div class="wrap">
+      <div class="hero-copy">
+        <span class="eyebrow">Arte con globos · fiestas, eventos, campañas y discotecas</span>
+        <h1>Presencia <span class="wavy"> visual </span> <em>que destaca</em></h1>
+        <p>Cumpleaños, bodas, baby showers o un martes cualquiera. Elige tus globos y los llevamos listos para celebrar.</p>
+        <div class="hero-ctas">
+          <a class="btn btn-primary btn-candy" href="#catalogo">Ver catálogo</a>
+          <a class="btn btn-secondary btn-candy" href="#arreglo">Arma tu arreglo</a>
+        </div>
+        <div class="trust">
+          <span><i></i>Inflado con helio disponible</span>
+          <span><i></i>Látex biodegradable</span>
+          <span><i></i>Arreglos personalizados</span>
+        </div>
+        <span class="hand">¡Pasion por los globos!</span>
+      </div>
+      <div class="cluster" aria-hidden="true">
+        <div class="b b1"><div class="float" data-balloon="round" data-color="#FF3D7F"></div></div>
+        <div class="b b2"><div class="float" data-balloon="heart" data-color="#8B5CF6" data-finish="metal"></div></div>
+        <div class="b b3"><div class="float" data-balloon="round" data-color="#FFC93C"></div></div>
+        <div class="b b4"><div class="float" data-balloon="star" data-color="#2EC4FF" data-finish="metal"></div></div>
+        <div class="b b5"><div class="float" data-balloon="round" data-color="#2DD4A3"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <svg class="divider" viewBox="0 0 1200 24" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="rainbow" x1="0" x2="1"><stop offset="0" stop-color="#FF3D7F"/><stop offset=".25" stop-color="#FFC93C"/><stop offset=".5" stop-color="#2EC4FF"/><stop offset=".75" stop-color="#2DD4A3"/><stop offset="1" stop-color="#8B5CF6"/></linearGradient></defs>
+    <path d="M0 12 Q 25 0 50 12 T 100 12 T 150 12 T 200 12 T 250 12 T 300 12 T 350 12 T 400 12 T 450 12 T 500 12 T 550 12 T 600 12 T 650 12 T 700 12 T 750 12 T 800 12 T 850 12 T 900 12 T 950 12 T 1000 12 T 1050 12 T 1100 12 T 1150 12 T 1200 12" fill="none" stroke="url(#rainbow)" stroke-width="4" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+  </svg>
+
+  <!-- CATÁLOGO -->
+  <section class="section" id="catalogo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Catálogo</span>
+          <h2>Hacemos del globo un arte</h2>
+        </div>
+        <p>Elige lo que necesitas, añádelo con el botón + y te enviamos tu cotización por WhatsApp.</p>
+      </div>
+      <div class="chips" id="chips" role="group" aria-label="Filtrar por categoría"></div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- PASOS -->
+  <section class="section soft" id="arreglo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Arma tu arreglo</span>
+          <h2>Tu arreglo en tres pasos</h2>
+        </div>
+        <p>¿No sabes por dónde empezar? Te guiamos.</p>
+      </div>
+      <ol class="steps">
+        <li class="step reveal" style="--tint: var(--tint-pink); --solid: var(--pop-pink); --on-solid: #fff;">
+          <span class="step-num">1</span>
+          <h3>Elige la ocasión</h3>
+          <p>Cumpleaños, boda, graduación o baby shower. Cada ocasión tiene sus formas y tamaños.</p>
+        </li>
+        <li class="step reveal" style="--tint: var(--tint-yellow); --solid: var(--pop-yellow);">
+          <span class="step-num">2</span>
+          <h3>Escoge tus colores</h3>
+          <p>Hasta tres colores por arreglo. contactanos, te mandamos una propuesta por WhatsApp.</p>
+        </li>
+        <li class="step reveal" style="--tint: var(--tint-green); --solid: var(--pop-green);">
+          <span class="step-num">3</span>
+          <h3>Lo recibes inflado</h3>
+          <p>Llega inflado con helio y listo para colgar. Los de látex flotan de 12 a 18 horas.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- PREMIUM -->
+  <section class="section" id="premium">
+    <div class="wrap">
+      <div class="banner reveal">
+        <div class="banner-copy">
+          <span class="eyebrow">Packs premium</span>
+          <h2>Arcos y columnas para fiestas <em>grandes</em></h2>
+          <p>Arcos de 3 a 5 metros, columnas con número y paredes de globos.</p>
+          <div class="banner-list">
+            <span>Arco de 4 m · desde 100 soles</span>
+            <span>Columna doble · desde 150 soles</span>
+            <span>Montaje incluido</span>
+          </div>
+          <a class="btn btn-primary btn-candy" data-wa="Hola Globorox 👋 Quiero un presupuesto para un arco o columna de globos. La fiesta es el día: " href="#" target="_blank" rel="noopener">Pide tu presupuesto</a>
+        </div>
+        <div class="banner-art" aria-hidden="true">
+          <span data-balloon="round" data-color="#8B5CF6"></span>
+          <span data-balloon="number" data-color="#FFC93C" data-label="18" data-finish="metal"></span>
+          <span data-balloon="round" data-color="#FF3D7F"></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUIENES SOMOS -->
+  <section class="section soft" id="quienes-somos">
+    <div class="wrap">
+      <div class="about-intro reveal">
+        <span class="eyebrow">Quiénes somos</span>
+        <h2>¿Quiénes somos?</h2>
+        <p>Somos una empresa especializada en el arte con globos y la comunicación visual, dedicada a transformar espacios y potenciar la visibilidad de las marcas. Nos apasiona ayudar a nuestros clientes a sobresalir en sus campañas comerciales y a crear espacios inolvidables en sus eventos especiales, totalmente comprometidos con la excelencia y la puntualidad.</p>
+      </div>
+      <div class="mv-grid">
+        <article class="mv-card reveal" style="--tint: var(--tint-pink); --solid: var(--pop-pink);">
+          <span class="mv-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="5"/><circle cx="12" cy="12" r="1.5" fill="currentColor"/></svg>
+          </span>
+          <h3>Misión</h3>
+          <p>Potenciar marcas y transformar espacios a través de globos publicitarios de alto impacto visual y decoraciones creativas, creando experiencias memorables tanto para campañas comerciales como para eventos especiales.</p>
+        </article>
+        <article class="mv-card reveal" style="--tint: var(--tint-purple); --solid: var(--pop-purple);">
+          <span class="mv-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>
+          </span>
+          <h3>Visión</h3>
+          <p>Ser una agencia referente en decoración y experiencias con globos, y líder en el mercado peruano, reconocida por nuestra creatividad, innovación y capacidad para transformar cualquier ocasión en una celebración extraordinaria.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PREGUNTAS FRECUENTES (los enlaces de "Ayuda" del pie llevan aquí) -->
+  <section class="section" id="ayuda">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="eyebrow">Ayuda</span>
+          <h2>Preguntas frecuentes</h2>
+        </div>
+        <p>¿Te queda alguna duda? Escríbenos por WhatsApp y te respondemos al toque.</p>
+      </div>
+      <div class="faq-grid">
+        <article class="faq reveal" id="como-pedir" style="--tint: var(--tint-pink);">
+          <h3>¿Cómo hago mi pedido?</h3>
+          <p>Elige tus productos en el catálogo y añádelos con el botón +. Luego pulsa <b>pedidos 🎈</b> y envíanos la lista por WhatsApp. Te respondemos con el precio y la disponibilidad para tu fecha.</p>
+        </article>
+        <!-- ✏️ CONFIRMAR CON EL CLIENTE: zonas de reparto y con cuántos días de anticipación conviene pedir -->
+        <article class="faq reveal" id="envios" style="--tint: var(--tint-blue);">
+          <h3>Envíos y plazos</h3>
+          <p>Llevamos tus globos inflados y listos para usar. El envío es <b>gratis en pedidos desde 50 soles</b>, y en arcos, columnas y decoraciones grandes el montaje está incluido. Te recomendamos escribirnos con anticipación para separar tu fecha; el día y la hora de entrega los coordinamos por WhatsApp.</p>
+        </article>
+        <!-- ✏️ CONFIRMAR CON EL CLIENTE: cuánto duran los metalizados -->
+        <article class="faq reveal" id="helio" style="--tint: var(--tint-yellow);">
+          <h3>¿Cuánto dura el helio?</h3>
+          <p>Los globos de <b>látex</b> flotan de 12 a 18 horas, por eso los inflamos cerca de la hora de tu evento. Los <b>metalizados</b> duran varios días. Para que rindan más, mantenlos lejos del sol y del calor.</p>
+        </article>
+        <article class="faq reveal" id="pagos" style="--tint: var(--tint-green);">
+          <h3>¿Pago en la web?</h3>
+          <p>No. En la web solo armas tu cotización, sin compromiso. Cada pedido lo cotizamos según tu evento y coordinamos el pago contigo directamente por WhatsApp.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER -->
+  <section class="section" id="contacto">
+    <div class="wrap news">
+      <div class="news-copy reveal">
+        <span class="eyebrow">Club Globorox</span>
+        <h2>Ofertas antes que nadie</h2>
+        <p>Un correo al mes con descuentos, ideas de decoración y recordatorios para los cumpleaños que no quieres olvidar.</p>
+      </div>
+      <form class="form reveal" id="newsForm" novalidate>
+        <div class="field">
+          <label for="name">Tu nombre</label>
+          <input id="name" name="name" type="text" placeholder="Ej. Sofía" autocomplete="given-name">
+        </div>
+        <div class="field">
+          <label for="email">Correo electrónico</label>
+          <input id="email" name="email" type="email" placeholder="tucorreo@ejemplo.com" autocomplete="email" aria-describedby="emailError">
+          <span class="field-error" id="emailError" hidden>Revisa tu correo: le falta la @ o el dominio.</span>
+        </div>
+        <div class="field">
+          <label for="occasion">Tu próxima fiesta</label>
+          <select id="occasion" name="occasion">
+            <option>Cumpleaños</option>
+            <option>Boda</option>
+            <option>Baby shower</option>
+            <option>Graduación</option>
+            <option>Otra celebración</option>
+          </select>
+        </div>
+        <button class="btn btn-primary btn-candy" type="submit">Quiero las ofertas</button>
+        <p class="form-legal">Al suscribirte aceptas recibir correos de Globorox. Puedes darte de baja cuando quieras.</p>
+        <div class="form-ok" id="formOk" hidden>¡Listo! Ya eres parte del club 🎉</div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <svg class="footer-cloud" viewBox="0 0 1200 60" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 60 V40 C 40 10 90 10 120 34 C 150 0 220 0 250 30 C 290 4 350 6 380 34 C 420 2 490 2 520 32 C 560 6 620 6 650 34 C 690 0 760 2 790 30 C 830 6 890 6 920 34 C 960 2 1030 2 1060 32 C 1100 8 1160 8 1200 36 V60 Z" fill="#1F1A2E"/>
+  </svg>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="logo" href="#inicio"><img src="img/logo/logo-globorox-marca.png" alt="Globorox" width="552" height="143" loading="lazy"></a>
+        <p>Globos, arreglos y montajes para que tu fiesta empiece antes de que llegue el primer invitado.</p>
+      </div>
+      <div>
+        <h4>Tienda</h4>
+        <ul>
+          <li><a href="#catalogo">Látex</a></li>
+          <li><a href="#catalogo">Metalizados</a></li>
+          <li><a href="#catalogo">Números</a></li>
+          <li><a href="#premium">Packs premium</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Ayuda</h4>
+        <ul>
+          <li><a href="#como-pedir">Cómo pedir</a></li>
+          <li><a href="#envios">Envíos y plazos</a></li>
+          <li><a href="#helio">Cuánto dura el helio</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <ul>
+          <li><a href="#inicio">Instagram</a></li>
+          <li><a href="#inicio">TikTok</a></li>
+          <li><a href="#inicio">Pinterest</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Globorox</span>
+      <span>Hecho con globos y paciencia</span>
+    </div>
+  </div>
+</footer>
+
+<!-- Cajón con la lista del pedido: aquí NO se paga, solo se arma el mensaje para WhatsApp -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer" aria-label="Tu pedido" aria-hidden="true">
+  <div class="drawer-head">
+    <h3>Tu cotización</h3>
+    <button class="icon-btn btn-candy btn-candy--suave" type="button" id="closeDrawer" aria-label="Cerrar">✕</button>
+  </div>
+  <ul class="order-list" id="orderList"></ul>
+  <div class="drawer-foot">
+    <p class="order-note">Aquí no pagas nada. Te enviamos precio y disponibilidad por WhatsApp según tu evento.</p>
+    <a class="btn btn-wa btn-candy btn-candy--wa" id="sendWa" href="#" target="_blank" rel="noopener" aria-disabled="true"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg>Pedir cotización por WhatsApp</a>
+  </div>
+</aside>
+
+<a class="wa-float btn-candy btn-candy--wa" data-wa="Hola Globorox 👋 Tengo una pregunta sobre sus globos." href="#" target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.9 11.9 0 0 0 4.6 4c1.7.7 2.3.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2l-.5-.3z"/></svg></a>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/main.js"></script>
+</body>
+</html>
