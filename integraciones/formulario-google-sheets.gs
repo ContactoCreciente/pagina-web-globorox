@@ -15,6 +15,11 @@
 
 const SHEET_NAME = 'Suscriptores';
 
+// Al abrir la URL en el navegador: confirma que el script está activo
+function doGet() {
+  return ContentService.createTextOutput('Funcionando ✓ — el formulario de Globorox está conectado.');
+}
+
 function doPost(e) {
   const book = SpreadsheetApp.getActiveSpreadsheet();
   const sheet = book.getSheetByName(SHEET_NAME) || book.insertSheet(SHEET_NAME);

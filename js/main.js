@@ -104,7 +104,7 @@ const categories = [
   { id: 'decoracion',    label: 'Decoraciones',         emoji: '🎈', tint: '--tint-purple', solid: '--pop-purple', onSolid: '#fff' },
   { id: 'favoritos',     label: 'Los más pedidos',      emoji: '⭐', tint: '--tint-yellow', solid: '--pop-yellow' },
 ];
-/* 📸 FOTOS: guarda cada foto en la carpeta img/catalogo/ con el nombre que dice "img".
+/* FOTOS: guarda cada foto en la carpeta img/catalogo/ con el nombre que dice "img".
    Si la foto no existe todavía, la tarjeta muestra un globo dibujado y el aviso "Espacio para tu foto".
    Tamaño recomendado: horizontal, 1000 × 800 px (proporción 5:4), en .jpg */
 // finish: 'metal' = papel aluminio brillante · sin finish = látex mate
@@ -175,7 +175,7 @@ function render() {
     const i = products.indexOf(p);
     return `<article class="card" style="--tint: var(${p.tint})">
       ${p.badge ? `<span class="badge${p.urgent ? ' urgent' : ''}">${p.badge}</span>` : ''}
-      <div class="card-media">${productArt(p)}<span class="ph-hint">📸 Espacio para tu foto</span></div>
+      <div class="card-media">${productArt(p)}<span class="ph-hint">Espacio para tu foto</span></div>
       <div class="card-body">
         <span class="card-cat">${p.catLabel}</span>
         <h3>${p.name}</h3>
@@ -241,7 +241,7 @@ function renderOrder() {
 
   // El mensaje que le llegará a la tienda por WhatsApp (sin precios: Globorox cotiza cada pedido)
   const lines = entries.map(([i, q]) => `• ${q} × ${products[i].name}`);
-  const msg = `Hola Globorox 👋 Quiero cotizar lo siguiente:\n\n${lines.join('\n')}\n\n¿Me envían precio y disponibilidad? La fecha de mi evento es: `;
+  const msg = `Hola Globorox Quiero cotizar lo siguiente:\n\n${lines.join('\n')}\n\n¿Me envían precio y disponibilidad? La fecha de mi evento es: `;
   sendWa.href = entries.length ? waLink(msg) : '#';
   sendWa.setAttribute('aria-disabled', entries.length ? 'false' : 'true');
 }
@@ -272,7 +272,7 @@ gridEl.addEventListener('click', e => {
   order[i] = (order[i] || 0) + 1;
   renderOrder();
   countEl.classList.remove('pop'); void countEl.offsetWidth; countEl.classList.add('pop');
-  showToast('Añadido a tu cotización 🎈');
+  showToast('Añadido a tu cotización');
   if (firstAdd && !reduced) burst(btn);
   firstAdd = false;
 });
@@ -315,7 +315,7 @@ if ('IntersectionObserver' in window && !reduced) {
 }
 
 /* ---------- Formulario → Google Sheets ----------
-   👉 PEGA AQUÍ la URL que te da Google Apps Script al publicar (termina en /exec).
+👉 PEGA AQUÍ la URL que te da Google Apps Script al publicar (termina en /exec).
       Ver integraciones/formulario-google-sheets.gs */
 const SHEET_URL = 'https://script.google.com/macros/s/AKfycbzopqAiD2LkqJfJSBaIU0jVO9sGygXfdLo0BlwidUw4NzW0avYPkqzOUDyud0IzwwzbgQ/exec';
 
